@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Add Asset</h2>
+
+<form method="POST">
+    {% csrf_token %}
+
+    <input type="text" name="name" placeholder="Asset Name"><br><br>
+    <input type="text" name="type" placeholder="Type"><br><br>
+    <input type="text" name="serial" placeholder="Serial Number"><br><br>
+    <input type="text" name="status" placeholder="Status"><br><br>
+    <input type="date" name="purchase_date"><br>
+    <button type="submit">Add</button>
+</form>
+</body>
+</html>

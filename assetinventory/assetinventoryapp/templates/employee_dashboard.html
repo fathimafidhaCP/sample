@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Employee Dashboard</h1>
+
+    <h3>My Assets</h3>
+    <ul>
+        {% for a in my_assets %}
+            <li>{{ a.asset.name }}</li>
+        {% endfor %}
+    </ul>
+    
+    <h3>My Repair Tickets</h3>
+    <ul>
+        {% for r in my_repairs %}
+            <li>{{ r.issue }} - {{ r.status }}</li>
+        {% endfor %}
+    </ul>
+
+<a href="{% url 'logout' %}">Logout</a><br>
+<a href="{% url 'raise_ticket' %}">Raise Ticket</a>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Raise Ticket</h2>
+
+<form method="POST">
+    {% csrf_token %}
+
+    <label>Select Asset:</label>
+    <select name="asset">
+        <option value="">-- Select --</option>
+        {% for a in my_assets %}
+            <option value="{{ a.asset.id }}">{{ a.asset.name }}</option>
+        {% endfor %}
+    </select>
+
+    <br><br>
+
+    <label>Issue:</label>
+    <input type="text" name="issue">
+
+    <br><br>
+
+    <button type="submit">Submit</button>
+</form>
+
+{% if error %}
+<p style="color:red;">{{ error }}</p>
+{% endif %}
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Assign Asset</h2>
+
+<form method="POST">
+    {% csrf_token %}
+
+    <label>Asset:</label>
+    <select name="asset">
+        {% for a in assets %}
+            <option value="{{ a.id }}">{{ a.name }}</option>
+        {% endfor %}
+    </select>
+
+    <label>Employee:</label>
+    <select name="employee">
+        {% for e in employees %}
+            <option value="{{ e.id }}">{{ e.username }}</option>
+        {% endfor %}
+    </select>
+
+    <button type="submit">Assign</button>
+</form>
+</body>
+</html>
